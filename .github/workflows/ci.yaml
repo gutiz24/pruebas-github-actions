@@ -36,6 +36,7 @@ jobs:
           npm test
   audit:
     runs-on: ubuntu-latest
+    if: ${{ always() }}
     needs: [test, build]
     steps:
       - name: Audit

@@ -1,3 +1,1 @@
 # Hangman API
-
-Un cambio

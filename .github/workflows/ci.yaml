@@ -35,6 +35,7 @@ jobs:
       - name: test
         working-directory: ./hangman-api
         run: |
+          npm ci
           npm test
 
   

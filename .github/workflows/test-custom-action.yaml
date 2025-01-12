@@ -9,6 +9,6 @@ jobs:
 
     steps:
       - name: Get commodity price
-        uses: gutiz24/get-commodity-price-action@v1.0.0
+        uses: gutiz24/get-commodity-price-action@v1.0.1
         with:
           commodity: 'silver'

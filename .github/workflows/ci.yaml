@@ -7,6 +7,7 @@ on:
   pull_request:
     branches: [ main ]
     paths: [ "hangman-api/**" ]
+  workflow_dispatch:
 
 
 jobs:
@@ -65,7 +66,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 16
-      - name: Create database relationship
+      - name: Create database relationship & Integration Test
         working-directory: ./hangman-api
         env:
           DATABASE_PORT: 5432
@@ -77,7 +78,8 @@ jobs:
           DATABASE_POOL_MAX: 10
         run: |
           npm ci
-          npx knex migrate:latest
+          npx knex migrate:latest --env development
+          npm run test:integration
       # - name: Integration-test
       #   working-directory: ./hangman-api
       #   run: docker compose -f test-integration.yaml up --force-recreate --exit-code-from build-bd-relationships

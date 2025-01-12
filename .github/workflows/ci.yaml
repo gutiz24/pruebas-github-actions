@@ -48,7 +48,9 @@ jobs:
       #     path: hangman-api/node_modules
       - name: test
         working-directory: ./hangman-api
-        run: npm test
+        run: |
+          npm ci
+          npm test
   # audit:
   #   runs-on: ubuntu-latest
   #   needs: test

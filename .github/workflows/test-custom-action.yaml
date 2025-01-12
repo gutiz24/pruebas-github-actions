@@ -1,0 +1,14 @@
+name: Test get commodity price custom actions
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  get_commodity_price:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get commodity price
+        uses: gutiz24/get-commodity-price-action@1.0.0
+        with:
+          commodity: 'silver'

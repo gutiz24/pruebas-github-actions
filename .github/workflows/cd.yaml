@@ -1,10 +1,13 @@
 name: CD workflow
 
 on:
+  push:
+    branches: [ main ]
+    paths: [ "hangman-api/**" ]
   pull_request:
     branches: [ main ]
     paths: [ "hangman-api/**" ]
-  # workflow_dispatch:
+  workflow_dispatch:
     
 jobs:
   build:

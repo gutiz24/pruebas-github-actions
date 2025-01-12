@@ -1,3 +1,3 @@
 # Hangman API
 
-change nuevo CD
+change nuevo CD aderido
